@@ -30,15 +30,15 @@ public class DownloadServlet extends HttpServlet {
         
         String specFile = req.getParameter("file");
         
-        String filePath = "F:\\PROJECTS\\Netbeans projects\\testingServlet\\resources\\" + specFile;
-        File file = new File(filePath);
+//        String filePath = "F:\\PROJECTS\\Netbeans projects\\testingServlet\\resources\\" + specFile;
+//        File file = new File(filePath);
         
 //        String filePath = new File(".").getCanonicalPath();
 //        System.out.println(filePath);
-//        File file = new File(filePath + "\\resources\\amina.mp3");
+//        File file = new File(filePath + "\\resources\\" + specFile);
 
-//        String filePath = getServletContext().getRealPath(resources\\hymn.mp3);
-//        File file = new File(filePath);
+        String filePath = getServletContext().getRealPath("resources" + File.separator + specFile);
+        File file = new File(filePath);
         
         FileInputStream fis = new FileInputStream(file);
 
